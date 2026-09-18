@@ -39,6 +39,7 @@ import { enableGroupLinkFactory } from "./apis/enableGroupLink.js";
 import { fetchAccountInfoFactory } from "./apis/fetchAccountInfo.js";
 import { findUserFactory } from "./apis/findUser.js";
 import { findUserByUsernameFactory } from "./apis/findUserByUsername.js";
+import { forwardAttachmentFactory } from "./apis/forwardAttachment.js";
 import { forwardMessageFactory } from "./apis/forwardMessage.js";
 import { getAliasListFactory } from "./apis/getAliasList.js";
 import { getAllFriendsFactory } from "./apis/getAllFriends.js";
@@ -200,6 +201,7 @@ export class API {
     public fetchAccountInfo: ReturnType<typeof fetchAccountInfoFactory>;
     public findUser: ReturnType<typeof findUserFactory>;
     public findUserByUsername: ReturnType<typeof findUserByUsernameFactory>;
+    public forwardAttachment: ReturnType<typeof forwardAttachmentFactory>;
     public forwardMessage: ReturnType<typeof forwardMessageFactory>;
     public getAliasList: ReturnType<typeof getAliasListFactory>;
     public getAllFriends: ReturnType<typeof getAllFriendsFactory>;
@@ -361,6 +363,7 @@ export class API {
         this.fetchAccountInfo = fetchAccountInfoFactory(ctx, this);
         this.findUser = findUserFactory(ctx, this);
         this.findUserByUsername = findUserByUsernameFactory(ctx, this);
+        this.forwardAttachment = forwardAttachmentFactory(ctx, this);
         this.forwardMessage = forwardMessageFactory(ctx, this);
         this.getAliasList = getAliasListFactory(ctx, this);
         this.getAllFriends = getAllFriendsFactory(ctx, this);

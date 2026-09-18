@@ -67,8 +67,18 @@ export type {
     ForwardMessageSuccess,
     ForwardMessageFail,
     ForwardMessagePayload,
+    ForwardTextPayload,
+    ForwardLinkPayload,
+    ForwardMessageReference,
+    ForwardMessageRecipient,
     ForwardMessageResponse,
 } from "./apis/forwardMessage.js";
+export type {
+    ForwardAttachmentOptions,
+    ForwardImageAttachmentOptions,
+    ForwardFileAttachmentOptions,
+    ForwardAttachmentResponse,
+} from "./apis/forwardAttachment.js";
 export type { GetAliasListResponse } from "./apis/getAliasList.js";
 export type { GetAllFriendsResponse } from "./apis/getAllFriends.js";
 export type { GetAllGroupsResponse } from "./apis/getAllGroups.js";
@@ -219,6 +229,7 @@ export { ReviewPendingMemberRequestStatus } from "./apis/reviewPendingMemberRequ
 export { TextStyle, Urgency } from "./apis/sendMessage.js";
 export { ReportReason } from "./apis/sendReport.js";
 export { MuteAction, MuteDuration } from "./apis/setMute.js";
+export { ForwardAttachmentType } from "./apis/forwardAttachment.js";
 export { ChatTTL } from "./apis/updateAutoDeleteChat.js";
 export { UpdateLangAvailableLanguages } from "./apis/updateLang.js";
 export { UpdateSettingsType } from "./apis/updateSettings.js";
