@@ -44,7 +44,7 @@ export const updateQuickMessageFactory = apiFactory<UpdateQuickMessageResponse>(
             const uploadMedia = await api.uploadProductPhoto({
                 file: updatePayload.media,
             });
-            
+
             const photoId = uploadMedia.photoId;
             const thumbUrl = uploadMedia.thumbUrl;
             const normalUrl = uploadMedia.normalUrl;

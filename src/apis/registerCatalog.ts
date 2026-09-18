@@ -8,9 +8,9 @@ export const registerCatalogFactory = apiFactory<RegisterCatalogResponse>()((api
 
     /**
      * Register catalog?
-     * 
+     *
      * @param enable enable or disable catalog
-     * 
+     *
      * @throws {ZaloApiError}
      */
     return async function registerCatalog(enable: boolean) {

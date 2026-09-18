@@ -6,7 +6,6 @@ export type GetFriendOnlinesStatus = {
     status: string;
 };
 
-
 export type GetFriendOnlinesResponse = {
     predefine: string[];
     ownerStatus: string;

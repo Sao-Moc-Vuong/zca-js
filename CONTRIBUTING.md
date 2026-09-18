@@ -4,17 +4,17 @@ Thank you for your interest in contributing to zca-js! This project is maintaine
 
 ## Table of Contents
 
-- [Code of Conduct](#code-of-conduct)
-- [Getting Started](#getting-started)
-- [Development Setup](#development-setup)
-- [How to Contribute](#how-to-contribute)
-- [Pull Request Process](#pull-request-process)
-- [Code Style Guidelines](#code-style-guidelines)
-- [Testing Guidelines](#testing-guidelines)
-- [Documentation Guidelines](#documentation-guidelines)
-- [Security Guidelines](#security-guidelines)
-- [Release Process](#release-process)
-- [Getting Help](#getting-help)
+-   [Code of Conduct](#code-of-conduct)
+-   [Getting Started](#getting-started)
+-   [Development Setup](#development-setup)
+-   [How to Contribute](#how-to-contribute)
+-   [Pull Request Process](#pull-request-process)
+-   [Code Style Guidelines](#code-style-guidelines)
+-   [Testing Guidelines](#testing-guidelines)
+-   [Documentation Guidelines](#documentation-guidelines)
+-   [Security Guidelines](#security-guidelines)
+-   [Release Process](#release-process)
+-   [Getting Help](#getting-help)
 
 ## Code of Conduct
 
@@ -24,22 +24,22 @@ This project adheres to our [Code of Conduct](CODE_OF_CONDUCT.md). By participat
 
 ### Prerequisites
 
-- Node.js >= 18.0.0
-- Bun (recommended) or npm
-- Git
+-   Node.js >= 18.0.0
+-   Bun (recommended) or npm
+-   Git
 
 ### Fork and Clone
 
 1. Fork this repository
 2. Clone your fork:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/zca-js.git
-   cd zca-js
-   ```
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/zca-js.git
+    cd zca-js
+    ```
 3. Add upstream remote:
-   ```bash
-   git remote add upstream https://github.com/RFS-ADRENO/zca-js.git
-   ```
+    ```bash
+    git remote add upstream https://github.com/RFS-ADRENO/zca-js.git
+    ```
 
 ## Development Setup
 
@@ -89,13 +89,13 @@ bun run prettier
 
 We welcome the following types of contributions:
 
-- 🐛 **Bug Reports**: Report bugs and issues
-- ✨ **Feature Requests**: Suggest new features
-- 🔧 **Code Contributions**: Fix bugs and add features
-- 📚 **Documentation**: Improve docs and examples
-- 🧪 **Tests**: Add or improve tests
-- 🔒 **Security**: Report security vulnerabilities
-- 🌐 **Translations**: Translate docs to other languages
+-   🐛 **Bug Reports**: Report bugs and issues
+-   ✨ **Feature Requests**: Suggest new features
+-   🔧 **Code Contributions**: Fix bugs and add features
+-   📚 **Documentation**: Improve docs and examples
+-   🧪 **Tests**: Add or improve tests
+-   🔒 **Security**: Report security vulnerabilities
+-   🌐 **Translations**: Translate docs to other languages
 
 ### Before You Start
 
@@ -108,38 +108,43 @@ We welcome the following types of contributions:
 ### Creating a Pull Request
 
 1. **Create a feature branch**:
-   ```bash
-   git checkout -b feature/your-feature-name
-   # or
-   git checkout -b fix/your-bug-fix
-   ```
+
+    ```bash
+    git checkout -b feature/your-feature-name
+    # or
+    git checkout -b fix/your-bug-fix
+    ```
 
 2. **Make your changes**:
-   - Follow code style guidelines
-   - Add tests for new functionality
-   - Update documentation if needed
+
+    - Follow code style guidelines
+    - Add tests for new functionality
+    - Update documentation if needed
 
 3. **Test your changes**:
-   ```bash
-   bun run build
-   bun run test:feat
-   ```
+
+    ```bash
+    bun run build
+    bun run test:feat
+    ```
 
 4. **Commit your changes**:
-   ```bash
-   git add .
-   git commit -m "feat: add new API method for group management"
-   ```
+
+    ```bash
+    git add .
+    git commit -m "feat: add new API method for group management"
+    ```
 
 5. **Push to your fork**:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
+
+    ```bash
+    git push origin feature/your-feature-name
+    ```
 
 6. **Create a Pull Request**:
-   - Use the provided PR template
-   - Link related issues
-   - Provide clear description of changes
+    - Use the provided PR template
+    - Link related issues
+    - Provide clear description of changes
 
 ### PR Review Process
 
@@ -153,11 +158,11 @@ We welcome the following types of contributions:
 
 ### TypeScript Guidelines
 
-- Use TypeScript strict mode
-- Prefer interfaces over types for object shapes
-- Use meaningful variable and function names
-- Add JSDoc comments for public APIs
-- Use async/await over Promises when possible
+-   Use TypeScript strict mode
+-   Prefer interfaces over types for object shapes
+-   Use meaningful variable and function names
+-   Add JSDoc comments for public APIs
+-   Use async/await over Promises when possible
 
 ### Code Organization
 
@@ -222,52 +227,55 @@ zca-js/
 
 ### Key Directories Explained
 
-- **`src/apis/`**: Contains all API method implementations (~100 files)
+-   **`src/apis/`**: Contains all API method implementations (~100 files)
 
-- **`src/models/`**: TypeScript interfaces and type definitions
-  - Core data structures for messages, events, and API responses
-  - Ensures type safety across the application
+-   **`src/models/`**: TypeScript interfaces and type definitions
 
-- **`src/Errors/`**: Custom error handling
-  - `ZaloApiError.ts`: Handles API-specific errors
-  - Provides consistent error handling across the library
+    -   Core data structures for messages, events, and API responses
+    -   Ensures type safety across the application
 
-- **`examples/`**: Usage examples and demonstrations
-  - `echobot.ts`: Complete example of a Zalo bot implementation
+-   **`src/Errors/`**: Custom error handling
 
-- **`test/`**: Test suites and test assets
-  - Feature tests for core functionality
-  - Integration tests for API methods
+    -   `ZaloApiError.ts`: Handles API-specific errors
+    -   Provides consistent error handling across the library
+
+-   **`examples/`**: Usage examples and demonstrations
+
+    -   `echobot.ts`: Complete example of a Zalo bot implementation
+
+-   **`test/`**: Test suites and test assets
+    -   Feature tests for core functionality
+    -   Integration tests for API methods
 
 ### Naming Conventions
 
-- **Files**: camelCase (e.g., `sendMessage.ts`)
-- **Classes**: PascalCase (e.g., `ZaloApiError`)
-- **Functions**: camelCase (e.g., `sendMessage`)
-- **Constants**: UPPER_SNAKE_CASE (e.g., `API_BASE_URL`)
-- **Interfaces**: PascalCase with `I` prefix (e.g., `IMessage`)
+-   **Files**: camelCase (e.g., `sendMessage.ts`)
+-   **Classes**: PascalCase (e.g., `ZaloApiError`)
+-   **Functions**: camelCase (e.g., `sendMessage`)
+-   **Constants**: UPPER_SNAKE_CASE (e.g., `API_BASE_URL`)
+-   **Interfaces**: PascalCase with `I` prefix (e.g., `IMessage`)
 
 ### Error Handling
 
 ```typescript
 // Good
 try {
-  const result = await api.sendMessage(message);
-  return result;
+    const result = await api.sendMessage(message);
+    return result;
 } catch (error) {
-  if (error instanceof ZaloApiError) {
-      throw error;
-  }
-  throw new ZaloApiError(`Failed to send message: ${error.message}`);
+    if (error instanceof ZaloApiError) {
+        throw error;
+    }
+    throw new ZaloApiError(`Failed to send message: ${error.message}`);
 }
 
 // Bad
 try {
-  const result = await api.sendMessage(message);
-  return result;
+    const result = await api.sendMessage(message);
+    return result;
 } catch (error) {
-  console.error(error);
-  return null;
+    console.error(error);
+    return null;
 }
 ```
 
@@ -276,32 +284,32 @@ try {
 ### Test Structure
 
 ```typescript
-describe('API Method', () => {
-  beforeEach(() => {
-    // Setup
-  });
+describe("API Method", () => {
+    beforeEach(() => {
+        // Setup
+    });
 
-  afterEach(() => {
-    // Cleanup
-  });
+    afterEach(() => {
+        // Cleanup
+    });
 
-  it('should handle success case', async () => {
-    // Test implementation
-  });
+    it("should handle success case", async () => {
+        // Test implementation
+    });
 
-  it('should handle error case', async () => {
-    // Test error handling
-  });
+    it("should handle error case", async () => {
+        // Test error handling
+    });
 });
 ```
 
 ### Testing Best Practices
 
-- Test both success and failure scenarios
-- Mock external dependencies
-- Use descriptive test names
-- Keep tests independent
-- Test edge cases and error conditions
+-   Test both success and failure scenarios
+-   Mock external dependencies
+-   Use descriptive test names
+-   Keep tests independent
+-   Test edge cases and error conditions
 
 ### Running Tests
 
@@ -320,12 +328,12 @@ bun run test:coverage
 
 ### API Documentation
 
-- Document all public methods with JSDoc
-- Include parameter types and descriptions
-- Provide usage examples
-- Document error conditions
+-   Document all public methods with JSDoc
+-   Include parameter types and descriptions
+-   Provide usage examples
+-   Document error conditions
 
-```typescript
+````typescript
 /**
  * Sends a message to a specific thread
  * @param message - The message object containing content and metadata
@@ -343,24 +351,24 @@ bun run test:coverage
  * ```
  */
 async sendMessage(message: IMessage, threadId: string, threadType: ThreadType): Promise<Message>
-```
+````
 
 ### README Updates
 
-- Update README.md for new features
-- Add examples for new APIs
-- Update installation instructions if needed
-- Keep the table of contents updated
+-   Update README.md for new features
+-   Add examples for new APIs
+-   Update installation instructions if needed
+-   Keep the table of contents updated
 
 ## Security Guidelines
 
 ### Security Best Practices
 
-- Never commit sensitive data (tokens, passwords, etc.)
-- Use environment variables for configuration
-- Validate all user inputs
-- Follow the principle of least privilege
-- Report security issues privately
+-   Never commit sensitive data (tokens, passwords, etc.)
+-   Use environment variables for configuration
+-   Validate all user inputs
+-   Follow the principle of least privilege
+-   Report security issues privately
 
 ### Security Reporting
 
@@ -376,18 +384,18 @@ If you discover a security vulnerability:
 ```typescript
 // Good - Validate inputs
 function sendMessage(content: string, threadId: string) {
-  if (!content || typeof content !== 'string') {
-    throw new ZaloApiError('Content must be a non-empty string');
-  }
-  if (!threadId || typeof threadId !== 'string') {
-    throw new ZaloApiError('ThreadId must be a non-empty string');
-  }
-  // Implementation
+    if (!content || typeof content !== "string") {
+        throw new ZaloApiError("Content must be a non-empty string");
+    }
+    if (!threadId || typeof threadId !== "string") {
+        throw new ZaloApiError("ThreadId must be a non-empty string");
+    }
+    // Implementation
 }
 
 // Bad - No validation
 function sendMessage(content: any, threadId: any) {
-  // Implementation without validation
+    // Implementation without validation
 }
 ```
 
@@ -397,17 +405,17 @@ function sendMessage(content: any, threadId: any) {
 
 We follow [Semantic Versioning](https://semver.org/):
 
-- **MAJOR**: Breaking changes
-- **MINOR**: New features (backward compatible)
-- **PATCH**: Bug fixes (backward compatible)
+-   **MAJOR**: Breaking changes
+-   **MINOR**: New features (backward compatible)
+-   **PATCH**: Bug fixes (backward compatible)
 
 ### Release Checklist
 
-- [ ] All tests pass
-- [ ] Documentation is updated
-- [ ] Version is bumped in package.json
-- [ ] Build is successful
-- [ ] Release notes are prepared
+-   [ ] All tests pass
+-   [ ] Documentation is updated
+-   [ ] Version is bumped in package.json
+-   [ ] Build is successful
+-   [ ] Release notes are prepared
 
 ### Publishing
 
@@ -426,23 +434,23 @@ npm publish
 
 ### Communication Channels
 
-- **GitHub Issues**: For bug reports and feature requests
-- **GitHub Discussions**: For questions and general discussion
-- **Pull Requests**: For code contributions
-- **Security Issues**: Use `[SECURITY]` label
+-   **GitHub Issues**: For bug reports and feature requests
+-   **GitHub Discussions**: For questions and general discussion
+-   **Pull Requests**: For code contributions
+-   **Security Issues**: Use `[SECURITY]` label
 
 ### Team Members
 
-- [@RFS-ADRENO](https://github.com/RFS-ADRENO)
-- [@truong9c2208](https://github.com/truong9c2208)
-- [@JustKemForFun](https://github.com/JustKemForFun)
+-   [@RFS-ADRENO](https://github.com/RFS-ADRENO)
+-   [@truong9c2208](https://github.com/truong9c2208)
+-   [@JustKemForFun](https://github.com/JustKemForFun)
 
 ### Resources
 
-- [API Documentation](https://zca-js.tdung.com)
-- [Examples](examples/)
-- [Security Policy](SECURITY.md)
-- [Code of Conduct](CODE_OF_CONDUCT.md)
+-   [API Documentation](https://zca-js.tdung.com)
+-   [Examples](examples/)
+-   [Security Policy](SECURITY.md)
+-   [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## Special Considerations for zca-js
 
@@ -451,20 +459,20 @@ npm publish
 > [!IMPORTANT]
 > ⚠️ zca-js is an unofficial API library for Zalo. Please be aware of:
 
-- **Account Risk**: Using this API may result in account suspension
-- **Terms of Service**: Respect Zalo's ToS in your contributions
-- **Rate Limiting**: Be mindful of API usage limits
-- **Privacy**: Protect user privacy and data
+-   **Account Risk**: Using this API may result in account suspension
+-   **Terms of Service**: Respect Zalo's ToS in your contributions
+-   **Rate Limiting**: Be mindful of API usage limits
+-   **Privacy**: Protect user privacy and data
 
 ### Responsible Development
 
-- Test changes thoroughly before submitting
-- Avoid introducing features that could harm users
-- Consider the impact on Zalo's infrastructure
-- Document any risks or limitations
+-   Test changes thoroughly before submitting
+-   Avoid introducing features that could harm users
+-   Consider the impact on Zalo's infrastructure
+-   Document any risks or limitations
 
 ---
 
 **Thank you for contributing to zca-js!** 🚀
 
-Your contributions help make this library better for the entire community. 
+Your contributions help make this library better for the entire community.

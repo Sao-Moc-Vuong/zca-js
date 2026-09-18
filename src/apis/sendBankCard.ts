@@ -23,7 +23,11 @@ export const sendBankCardFactory = apiFactory<SendBankCardResponse>()((api, _, u
      *
      * @throws {ZaloApiError}
      */
-    return async function sendBankCard(payload: SendBankCardPayload, threadId: string, type: ThreadType = ThreadType.User) {
+    return async function sendBankCard(
+        payload: SendBankCardPayload,
+        threadId: string,
+        type: ThreadType = ThreadType.User,
+    ) {
         const params = {
             binBank: payload.binBank,
             numAccBank: payload.numAccBank,

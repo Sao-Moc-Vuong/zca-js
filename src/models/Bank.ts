@@ -290,4 +290,4 @@ export enum BinBankCard {
      * NH TNHH MTV Woori Việt Nam
      */
     Woori_Bank = 970457,
-};
+}

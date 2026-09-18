@@ -18,7 +18,10 @@ export const getMultiUsersByPhonesFactory = apiFactory<GetMultiUsersByPhonesResp
      *
      * @throws {ZaloApiError}
      */
-    return async function getMultiUsersByPhones(phoneNumbers: string | string[], avatarSize: AvatarSize = AvatarSize.Large) {
+    return async function getMultiUsersByPhones(
+        phoneNumbers: string | string[],
+        avatarSize: AvatarSize = AvatarSize.Large,
+    ) {
         if (!phoneNumbers) throw new ZaloApiError("Missing phoneNumbers");
         if (!Array.isArray(phoneNumbers)) phoneNumbers = [phoneNumbers];
 

@@ -11,7 +11,7 @@
 ## Table of Contents
 
 -   [Installation](#installation)
-    - [Migrate to V2](#migrate-to-v2)
+    -   [Migrate to V2](#migrate-to-v2)
 -   [Documentation](#documentation)
 -   [Basic Usages](#basic-usages)
     -   [Login](#login)
@@ -180,13 +180,13 @@ See [examples](examples) folder for more details.
 
 <div align="center">
 
-| Repository | Description |
-|    :---    |    :---     |
-| [**ZaloDataExtractor**](https://github.com/JustKemForFun/ZaloDataExtractor) | A browser `Extension` to extract IMEI, cookies, and user agent from Zalo Web. |
-| [**MultiZlogin**](https://github.com/ChickenAI/multizlogin) | A multi-account Zalo management system that lets you log in to and manage multiple accounts simultaneously, with proxy and webhook integration. |
-| [**n8n-nodes-zalo-tools**](https://github.com/ChickenAI/zalo-node) | N8N node for personal Zalo account. |
-| [**Zalo-F12**](https://github.com/ElectroHeavenVN/Zalo-F12) | A collection of JavaScript code snippets to paste into DevTools to change how Zalo Web/PC works. |
-| [**Zalo-F12-Tools**](https://github.com/JustKemForFun/Zalo-F12-Tools) | Toggle hidden modes for Zalo Web. |
+| Repository                                                                  | Description                                                                                                                                     |
+| :-------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**ZaloDataExtractor**](https://github.com/JustKemForFun/ZaloDataExtractor) | A browser `Extension` to extract IMEI, cookies, and user agent from Zalo Web.                                                                   |
+| [**MultiZlogin**](https://github.com/ChickenAI/multizlogin)                 | A multi-account Zalo management system that lets you log in to and manage multiple accounts simultaneously, with proxy and webhook integration. |
+| [**n8n-nodes-zalo-tools**](https://github.com/ChickenAI/zalo-node)          | N8N node for personal Zalo account.                                                                                                             |
+| [**Zalo-F12**](https://github.com/ElectroHeavenVN/Zalo-F12)                 | A collection of JavaScript code snippets to paste into DevTools to change how Zalo Web/PC works.                                                |
+| [**Zalo-F12-Tools**](https://github.com/JustKemForFun/Zalo-F12-Tools)       | Toggle hidden modes for Zalo Web.                                                                                                               |
 
 </div>
 
@@ -196,12 +196,12 @@ See [examples](examples) folder for more details.
 
 We welcome contributions from the community! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to:
 
-- 🐛 Report bugs and issues
-- ✨ Suggest new features
-- 🔧 Submit code contributions
-- 📚 Improve documentation
-- 🧪 Add or improve tests
-- 🔒 Report security vulnerabilities
+-   🐛 Report bugs and issues
+-   ✨ Suggest new features
+-   🔧 Submit code contributions
+-   📚 Improve documentation
+-   🧪 Add or improve tests
+-   🔒 Report security vulnerabilities
 
 For more information, please read our [Code of Conduct](CODE_OF_CONDUCT.md) and [Security Policy](SECURITY.md) before participating.
 
@@ -215,11 +215,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## **Support Us**
 
-- ⭐ **Star our repositories** if you find them useful!  
-- 🔄 **Share** with your network to help us grow  
-- 💡 **Contribute** your ideas and code    
-- ☕ **A coffee**:
-    - [Buy Me a Coffee](https://ko-fi.com/grosse)
-    - [Paypal](https://www.paypal.com/paypalme/dungto213)
-    - [VietQR](https://github.com/user-attachments/assets/e1f319d6-9d11-4082-8248-55b55e645caa)
-    - [Momo](https://me.momo.vn/gMIMulsaUqsbf6iAiXt3)
+-   ⭐ **Star our repositories** if you find them useful!
+-   🔄 **Share** with your network to help us grow
+-   💡 **Contribute** your ideas and code
+-   ☕ **A coffee**:
+    -   [Buy Me a Coffee](https://ko-fi.com/grosse)
+    -   [Paypal](https://www.paypal.com/paypalme/dungto213)
+    -   [VietQR](https://github.com/user-attachments/assets/e1f319d6-9d11-4082-8248-55b55e645caa)
+    -   [Momo](https://me.momo.vn/gMIMulsaUqsbf6iAiXt3)

@@ -18,7 +18,10 @@ export const updateArchivedChatListFactory = apiFactory<UpdateArchivedChatListRe
      *
      * @throws {ZaloApiError}
      */
-    return async function updateArchivedChatList(isArchived: boolean, conversations: UpdateArchivedChatListTarget | UpdateArchivedChatListTarget[]) {
+    return async function updateArchivedChatList(
+        isArchived: boolean,
+        conversations: UpdateArchivedChatListTarget | UpdateArchivedChatListTarget[],
+    ) {
         if (!Array.isArray(conversations)) {
             conversations = [conversations];
         }

@@ -63,33 +63,36 @@ function prompt() {
 }
 
 function decodeHTTP() {
-    rl.question("\n\x1b[32m[ HTTP(s) ] Dán đoạn dữ liệu bị mã hóa hoặc gõ \x1b[37mexit\x1b[0m \x1b[32mđể thoát:\x1b[0m\n\n", (encoded) => {
-        if (encoded.length == 0) return decodeHTTP();
-        if (encoded == "exit") return prompt();
+    rl.question(
+        "\n\x1b[32m[ HTTP(s) ] Dán đoạn dữ liệu bị mã hóa hoặc gõ \x1b[37mexit\x1b[0m \x1b[32mđể thoát:\x1b[0m\n\n",
+        (encoded) => {
+            if (encoded.length == 0) return decodeHTTP();
+            if (encoded == "exit") return prompt();
 
-        if (encoded.startsWith('"') && encoded.endsWith('"')) encoded = JSON.parse(encoded);
+            if (encoded.startsWith('"') && encoded.endsWith('"')) encoded = JSON.parse(encoded);
 
-        try {
-            const decoded = decodeAES(secretKey, encoded);
-            if (decoded == null) {
+            try {
+                const decoded = decodeAES(secretKey, encoded);
+                if (decoded == null) {
+                    cannotDecodeAlert();
+                    return decodeHTTP();
+                }
+
+                const parsed = JSON.stringify(JSON.parse(decoded), null, 2);
+
+                console.log();
+                console.log("\x1b[32m=========== HTTP(s) ===========\x1b[0m");
+                console.log(parsed);
+                console.log("\x1b[32m===============================\x1b[0m");
+                console.log();
+
+                return decodeHTTP();
+            } catch {
                 cannotDecodeAlert();
                 return decodeHTTP();
             }
-
-            const parsed = JSON.stringify(JSON.parse(decoded), null, 2);
-
-            console.log();
-            console.log("\x1b[32m=========== HTTP(s) ===========\x1b[0m");
-            console.log(parsed);
-            console.log("\x1b[32m===============================\x1b[0m");
-            console.log();
-
-            return decodeHTTP();
-        } catch {
-            cannotDecodeAlert();
-            return decodeHTTP();
-        }
-    });
+        },
+    );
 }
 
 async function decodeWebsocket() {

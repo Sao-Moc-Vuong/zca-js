@@ -70,7 +70,8 @@ export const createGroupFactory = apiFactory<CreateGroupResponse>()((api, ctx, u
 
         const data = await utils.resolve(response);
         options.avatarSource = options.avatarSource || options.avatarPath;
-        if (options.avatarSource) await api.changeGroupAvatar(options.avatarSource, data.groupId).catch(utils.logger.error);
+        if (options.avatarSource)
+            await api.changeGroupAvatar(options.avatarSource, data.groupId).catch(utils.logger.error);
 
         return data;
     };

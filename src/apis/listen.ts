@@ -188,7 +188,7 @@ export class Listener extends EventEmitter<ListenerEvents> {
                 "user-agent": this.userAgent,
                 cookie: this.cookie,
             },
-            agent: this.ctx.options.agent
+            agent: this.ctx.options.agent,
         });
         this.ws = ws;
 
@@ -320,7 +320,7 @@ export class Listener extends EventEmitter<ListenerEvents> {
                                 this.ctx.uid,
                                 groupEventData,
                                 getGroupEventType(control.content.act),
-                                control.content.act
+                                control.content.act,
                             );
                             if (groupEvent.isSelf && !this.selfListen) continue;
                             this.emit("group_event", groupEvent);
