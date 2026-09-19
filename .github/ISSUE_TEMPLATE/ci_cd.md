@@ -16,4 +16,4 @@ Describe what's happening in the current pipeline.
 Describe what should happen in the pipeline.
 
 **Additional context**
-Add any other context about the CI/CD issue here. 
+Add any other context about the CI/CD issue here.

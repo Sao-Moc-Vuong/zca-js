@@ -288,11 +288,13 @@ export async function request(ctx: ContextBase, url: string, options?: RequestIn
 
     const _options = {
         ...(options ?? {}),
-        ...(isBun ? { 
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            proxy: ctx.options.agent?.proxy?.href
-        } : { agent: ctx.options.agent }),
+        ...(isBun
+            ? {
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                  // @ts-ignore
+                  proxy: ctx.options.agent?.proxy?.href,
+              }
+            : { agent: ctx.options.agent }),
     };
 
     const response = await ctx.options.polyfill(url, _options);
@@ -311,7 +313,11 @@ export async function request(ctx: ContextBase, url: string, options?: RequestIn
         for (const cookie of cookieStrings) {
             const parsed = toughCookie.Cookie.parse(cookie);
             try {
-                if (parsed) await ctx.cookie.setCookie(parsed, parsed.domain != "zalo.me" ? `https://${parsed.domain}` : origin);
+                if (parsed)
+                    await ctx.cookie.setCookie(
+                        parsed,
+                        parsed.domain != "zalo.me" ? `https://${parsed.domain}` : origin,
+                    );
             } catch (error: unknown) {
                 logger(ctx).error(error);
             }

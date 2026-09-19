@@ -6,6 +6,7 @@ import { ZaloApiError } from "../Errors/ZaloApiError.js";
 import { logger, request } from "../utils.js";
 import { ZaloApiLoginQRAborted } from "../Errors/ZaloApiLoginQRAborted.js";
 import { ZaloApiLoginQRDeclined } from "../Errors/ZaloApiLoginQRDeclined.js";
+import { ZaloApiLoginQRExpired } from "../Errors/ZaloApiLoginQRExpired.js";
 
 export enum LoginQRCallbackEventType {
     QRCodeGenerated,
@@ -462,6 +463,12 @@ export async function loginQR(
                             abort,
                         },
                     });
+                    // BUG (upstream zca-js): khi có callback, Promise gốc trước đây không bao
+                    // giờ resolve/reject ở nhánh này — chỉ bắn callback rồi treo mãi mãi. Nếu
+                    // callback không tự gọi retry()/abort() (đã settle Promise), phải tự reject
+                    // ở đây để Promise không bị treo. reject() sau khi đã settle là no-op an
+                    // toàn (theo spec Promise) nên gọi vô điều kiện không phá vỡ retry()/abort().
+                    reject(new ZaloApiLoginQRExpired());
                 } else {
                     retry();
                 }
@@ -498,6 +505,9 @@ export async function loginQR(
                             abort,
                         },
                     });
+                    // Cùng bug với nhánh QRCodeExpired ở trên — reject sau khi callback đã tự
+                    // resolve/reject (qua retry()/abort()) là no-op an toàn.
+                    reject(new ZaloApiLoginQRDeclined());
                 } else {
                     logger(ctx).error("QRCode login declined");
                     throw new ZaloApiLoginQRDeclined();

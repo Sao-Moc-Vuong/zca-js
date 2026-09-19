@@ -11,7 +11,7 @@ export const getFullAvatarFactory = apiFactory<GetFullAvatarResponse>()((api, ct
 
     /**
      * Get full avatar
-     * 
+     *
      * @param friendId friend id
      *
      * @throws {ZaloApiError}

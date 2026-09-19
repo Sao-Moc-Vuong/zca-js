@@ -30,7 +30,7 @@ export const createAutoReplyFactory = apiFactory<CreateAutoReplyResponse>()((api
      */
     return async function createAutoReply(payload: CreateAutoReplyPayload) {
         const uids = Array.isArray(payload.uids) ? payload.uids : [payload.uids];
-        const resultUids = (payload.scope === 2 || payload.scope === 3) ? uids : [];
+        const resultUids = payload.scope === 2 || payload.scope === 3 ? uids : [];
 
         const params = {
             cliLang: ctx.language,

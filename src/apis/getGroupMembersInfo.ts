@@ -39,7 +39,16 @@ export const getGroupMembersInfoFactory = apiFactory<GetGroupMembersInfoResponse
         const encryptedParams = utils.encodeAES(JSON.stringify(params));
         if (!encryptedParams) throw new ZaloApiError("Failed to encrypt message");
 
-        const response = await utils.request(utils.makeURL(serviceURL, { params: encryptedParams }));
+        // POST + body thay vì GET + query string: với batch member lớn (vd 200-300 id),
+        // params mã hoá AES nhét vào URL vượt giới hạn độ dài request-line/header phổ biến
+        // (~8KB) phía server, gây lỗi HTTP 431 (Request Header Fields Too Large). getGroupInfo
+        // (cùng file api) đã dùng đúng POST cho vấn đề tương tự.
+        const response = await utils.request(serviceURL, {
+            method: "POST",
+            body: new URLSearchParams({
+                params: encryptedParams,
+            }),
+        });
 
         return utils.resolve(response);
     };

@@ -67,7 +67,10 @@ export type FileData = {
     totalSize: number;
 };
 
-export type UploadAttachmentType = UploadAttachmentImageResponse | UploadAttachmentVideoResponse | UploadAttachmentFileResponse;
+export type UploadAttachmentType =
+    | UploadAttachmentImageResponse
+    | UploadAttachmentVideoResponse
+    | UploadAttachmentFileResponse;
 export type UploadAttachmentResponse = UploadAttachmentType[];
 
 type RawResponse = {
@@ -202,7 +205,9 @@ export const uploadAttachmentFactory = apiFactory()((api, ctx, utils) => {
                 case "jpeg":
                 case "png":
                 case "webp": {
-                    const imageData = isFilePath ? await getImageMetaData(ctx, source) : { ...source.metadata, fileName };
+                    const imageData = isFilePath
+                        ? await getImageMetaData(ctx, source)
+                        : { ...source.metadata, fileName };
                     if (isExceedMaxFileSize(imageData.totalSize!))
                         throw new ZaloApiError(
                             `File ${fileName} size exceed maximum size of ${sharefile.max_size_share_file_v3}MB`,

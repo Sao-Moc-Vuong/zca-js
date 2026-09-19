@@ -17,24 +17,24 @@ diverse, inclusive, and healthy community.
 Examples of behavior that contributes to a positive environment for our
 community include:
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes,
-  and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the
-  overall community
+-   Demonstrating empathy and kindness toward other people
+-   Being respectful of differing opinions, viewpoints, and experiences
+-   Giving and gracefully accepting constructive feedback
+-   Accepting responsibility and apologizing to those affected by our mistakes,
+    and learning from the experience
+-   Focusing on what is best not just for us as individuals, but for the
+    overall community
 
 Examples of unacceptable behavior include:
 
-* The use of sexualized language or imagery, and sexual attention or
-  advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email
-  address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+-   The use of sexualized language or imagery, and sexual attention or
+    advances of any kind
+-   Trolling, insulting or derogatory comments, and personal or political attacks
+-   Public or private harassment
+-   Publishing others' private information, such as a physical or email
+    address, without their explicit permission
+-   Other conduct which could reasonably be considered inappropriate in a
+    professional setting
 
 ## Enforcement Responsibilities
 
@@ -60,13 +60,14 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement through:
-- **GitHub Issues**: Create a private issue with the `[CONDUCT]` label
-- **GitHub Discussions**: Use the "Community" category for general concerns
-- **Direct Contact**: Reach out to any team member through GitHub
-- **Team Members**:
-  - [@RFS-ADRENO](https://github.com/RFS-ADRENO)
-  - [@truong9c2208](https://github.com/truong9c2208)
-  - [@JustKemForFun](https://github.com/JustKemForFun)
+
+-   **GitHub Issues**: Create a private issue with the `[CONDUCT]` label
+-   **GitHub Discussions**: Use the "Community" category for general concerns
+-   **Direct Contact**: Reach out to any team member through GitHub
+-   **Team Members**:
+    -   [@RFS-ADRENO](https://github.com/RFS-ADRENO)
+    -   [@truong9c2208](https://github.com/truong9c2208)
+    -   [@JustKemForFun](https://github.com/JustKemForFun)
 
 All complaints will be reviewed and investigated promptly and fairly by the team.
 
@@ -113,7 +114,7 @@ Violating these terms may lead to a permanent ban.
 ### 4. Permanent Ban
 
 **Community Impact**: Demonstrating a pattern of violation of community
-standards, including sustained inappropriate behavior,  harassment of an
+standards, including sustained inappropriate behavior, harassment of an
 individual, or aggression toward or disparagement of classes of individuals.
 
 **Consequence**: A permanent ban from any sort of public interaction within
@@ -141,23 +142,23 @@ guidelines specific to our project:
 
 ### Responsible Usage
 
-* **Respect Zalo's Terms of Service**: While this is an unofficial library,
-  users should be aware of and respect Zalo's terms of service
-* **Account Safety**: Do not encourage or provide guidance on circumventing
-  Zalo's security measures
-* **Privacy**: Respect user privacy and do not share personal information
-  obtained through the API
-* **Rate Limiting**: Encourage responsible usage that doesn't overload Zalo's
-  servers
+-   **Respect Zalo's Terms of Service**: While this is an unofficial library,
+    users should be aware of and respect Zalo's terms of service
+-   **Account Safety**: Do not encourage or provide guidance on circumventing
+    Zalo's security measures
+-   **Privacy**: Respect user privacy and do not share personal information
+    obtained through the API
+-   **Rate Limiting**: Encourage responsible usage that doesn't overload Zalo's
+    servers
 
 ### Technical Discussions
 
-* **Security**: When discussing security-related topics, use appropriate
-  channels and follow responsible disclosure practices
-* **Bugs and Issues**: Report bugs and issues through proper channels
-* **Documentation**: Help improve documentation and examples for the community
+-   **Security**: When discussing security-related topics, use appropriate
+    channels and follow responsible disclosure practices
+-   **Bugs and Issues**: Report bugs and issues through proper channels
+-   **Documentation**: Help improve documentation and examples for the community
 
 ---
 
 **Note**: This Code of Conduct is a living document and may be updated as our
-community grows and evolves. 
+community grows and evolves.

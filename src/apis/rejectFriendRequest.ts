@@ -9,7 +9,7 @@ export const rejectFriendRequestFactory = apiFactory<RejectFriendRequestResponse
     /**
      * Reject a friend request from a User
      *
-     * @param friendId 
+     * @param friendId
      *
      * @throws {ZaloApiError}
      */

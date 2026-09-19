@@ -2,7 +2,7 @@ import EventEmitter from "events";
 import WebSocket from "ws";
 import { type FriendEvent, initializeFriendEvent, type TFriendEvent } from "../models/FriendEvent.js";
 import { type GroupEvent, initializeGroupEvent, type TGroupEvent } from "../models/GroupEvent.js";
-import type { Message, TGroupMessage, TMessage, TReaction, Typing } from "../models/index.js";
+import type { Message, TGroupMessage, TMessage, TReaction, TUndo, Typing } from "../models/index.js";
 import { GroupMessage, UserMessage, Reaction, Undo, ThreadType, GroupTyping, UserTyping } from "../models/index.js";
 import { decodeEventData, getFriendEventType, getGroupEventType, hasOwn, logger, makeURL } from "../utils.js";
 import { ZaloApiError } from "../Errors/ZaloApiError.js";
@@ -188,7 +188,7 @@ export class Listener extends EventEmitter<ListenerEvents> {
                 "user-agent": this.userAgent,
                 cookie: this.cookie,
             },
-            agent: this.ctx.options.agent
+            agent: this.ctx.options.agent,
         });
         this.ws = ws;
 
@@ -320,7 +320,7 @@ export class Listener extends EventEmitter<ListenerEvents> {
                                 this.ctx.uid,
                                 groupEventData,
                                 getGroupEventType(control.content.act),
-                                control.content.act
+                                control.content.act,
                             );
                             if (groupEvent.isSelf && !this.selfListen) continue;
                             this.emit("group_event", groupEvent);
@@ -391,14 +391,39 @@ export class Listener extends EventEmitter<ListenerEvents> {
                 if (cmd == 510 && subCmd == 1) {
                     const parsedData = (await decodeEventData(parsed, this.cipherKey)).data;
                     const msgs = parsedData.msgs as TMessage[];
-                    const responseMsgs = msgs.map((msg) => new UserMessage(this.ctx.uid, msg));
+                    const responseMsgs: UserMessage[] = [];
+                    for (const msg of msgs) {
+                        // Tin nhắn trong lịch sử offline cũng có thể đã bị thu hồi trước đó —
+                        // phải tách ra như nhánh realtime (cmd 501) ở trên, nếu không tin thu hồi
+                        // sẽ bị coi là tin nhắn bình thường (hiện nguyên nội dung notify thô của
+                        // Zalo, vd "Tin nhắn đã thu hồi", thay vì được xử lý như đã xoá).
+                        if (typeof msg.content == "object" && hasOwn(msg.content, "deleteMsg")) {
+                            // Cùng cách cast msg -> Undo như nhánh realtime cmd 501 phía trên
+                            // (msgs ở đó suy ra kiểu lỏng hơn từ decodeEventData nên không cần
+                            // cast tường minh; ở đây msgs bị ép kiểu chặt TMessage[] nên cần).
+                            const undoObject = new Undo(this.ctx.uid, msg as unknown as TUndo, false);
+                            if (undoObject.isSelf && !this.selfListen) continue;
+                            this.emit("undo", undoObject);
+                        } else {
+                            responseMsgs.push(new UserMessage(this.ctx.uid, msg));
+                        }
+                    }
                     this.emit("old_messages", responseMsgs, ThreadType.User);
                 }
 
                 if (cmd == 511 && subCmd == 1) {
                     const parsedData = (await decodeEventData(parsed, this.cipherKey)).data;
                     const groupMsgs = parsedData.groupMsgs as TGroupMessage[];
-                    const responseMsgs = groupMsgs.map((msg) => new GroupMessage(this.ctx.uid, msg));
+                    const responseMsgs: GroupMessage[] = [];
+                    for (const msg of groupMsgs) {
+                        if (typeof msg.content == "object" && hasOwn(msg.content, "deleteMsg")) {
+                            const undoObject = new Undo(this.ctx.uid, msg as unknown as TUndo, true);
+                            if (undoObject.isSelf && !this.selfListen) continue;
+                            this.emit("undo", undoObject);
+                        } else {
+                            responseMsgs.push(new GroupMessage(this.ctx.uid, msg));
+                        }
+                    }
                     this.emit("old_messages", responseMsgs, ThreadType.Group);
                 }
 

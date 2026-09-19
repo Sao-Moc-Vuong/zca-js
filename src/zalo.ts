@@ -1,11 +1,6 @@
 import { loginQR, LoginQRCallbackEventType, type LoginQRCallback } from "./apis/loginQR.js";
 import { getServerInfo, login } from "./apis/login.js";
-import {
-    createContext,
-    isContextSession,
-    type ContextBase,
-    type Options,
-} from "./context.js";
+import { createContext, isContextSession, type ContextBase, type Options } from "./context.js";
 import { generateZaloUUID, logger } from "./utils.js";
 
 import toughCookie from "tough-cookie";

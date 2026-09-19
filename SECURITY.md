@@ -15,20 +15,24 @@ We actively maintain and provide security updates for the following versions:
 We take security vulnerabilities seriously. If you discover a security vulnerability in zca-js, please follow these steps:
 
 ### 1. **DO NOT** create a public GitHub issue
+
 Security vulnerabilities should be reported privately to prevent potential exploitation.
 
 ### 2. Report the vulnerability
+
 Send an email to the maintainers with the following information:
-- **Subject**: `[SECURITY] zca-js vulnerability report`
-- **Description**: Detailed description of the vulnerability
-- **Steps to reproduce**: Clear steps to reproduce the issue
-- **Impact assessment**: Potential impact of the vulnerability
-- **Suggested fix** (if available): Any suggestions for fixing the issue
+
+-   **Subject**: `[SECURITY] zca-js vulnerability report`
+-   **Description**: Detailed description of the vulnerability
+-   **Steps to reproduce**: Clear steps to reproduce the issue
+-   **Impact assessment**: Potential impact of the vulnerability
+-   **Suggested fix** (if available): Any suggestions for fixing the issue
 
 ### 3. Response timeline
-- **Initial response**: Within 48 hours
-- **Status update**: Within 1 week
-- **Resolution**: As soon as possible, typically within 30 days
+
+-   **Initial response**: Within 48 hours
+-   **Status update**: Within 1 week
+-   **Resolution**: As soon as possible, typically within 30 days
 
 ## Security Considerations
 
@@ -54,10 +58,10 @@ Send an email to the maintainers with the following information:
 
 ### Known Limitations
 
-- This library is not officially supported by Zalo
-- API endpoints and behavior may change without notice
-- No guarantee of service availability or stability
-- May break with Zalo Web updates
+-   This library is not officially supported by Zalo
+-   API endpoints and behavior may change without notice
+-   No guarantee of service availability or stability
+-   May break with Zalo Web updates
 
 ## Security Updates
 
@@ -66,13 +70,14 @@ Security updates will be released as patch versions (e.g., 2.0.1, 2.0.2) and wil
 ## Contact Information
 
 For security-related issues, please contact:
-- **GitHub Issues**: Create a private issue with the `[SECURITY]` label
-- **GitHub Discussions**: Use the "Security" category for general security questions
-- **Team Members**: 
-  - [@RFS-ADRENO](https://github.com/RFS-ADRENO)
-  - [@truong9c2208](https://github.com/truong9c2208)
-  - [@JustKemForFun](https://github.com/JustKemForFun)
-- **Alternative**: Contact any team member through GitHub for urgent security matters
+
+-   **GitHub Issues**: Create a private issue with the `[SECURITY]` label
+-   **GitHub Discussions**: Use the "Security" category for general security questions
+-   **Team Members**:
+    -   [@RFS-ADRENO](https://github.com/RFS-ADRENO)
+    -   [@truong9c2208](https://github.com/truong9c2208)
+    -   [@JustKemForFun](https://github.com/JustKemForFun)
+-   **Alternative**: Contact any team member through GitHub for urgent security matters
 
 ## Acknowledgments
 
@@ -80,4 +85,4 @@ We appreciate security researchers and community members who responsibly disclos
 
 ---
 
-**Note**: This security policy is subject to change. Please check back regularly for updates. 
+**Note**: This security policy is subject to change. Please check back regularly for updates.

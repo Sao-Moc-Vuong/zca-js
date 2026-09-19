@@ -23,7 +23,7 @@ export const setHiddenConversationsFactory = apiFactory<SetHiddenConversationsRe
     ) {
         threadId = Array.isArray(threadId) ? threadId : [threadId];
         if (threadId.length === 0) throw new ZaloApiError("threadId is required");
-        
+
         const is_group = type === ThreadType.Group ? 1 : 0;
         const params = {
             [hidden ? "add_threads" : "del_threads"]: JSON.stringify(

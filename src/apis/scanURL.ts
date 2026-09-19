@@ -10,14 +10,13 @@ export const scanURLFactory = apiFactory<ScanURLResponse>()((api, _ctx, utils) =
 
     /**
      * Scan URL to check if it is safe?
-     * 
+     *
      * @param url URL to scan
      *
      * @throws {ZaloApiError} When something went wrong, with `error.code`
      * - `114` - Invalid params
      */
     return async function scanURL(url: string) {
-
         const params = {
             url: url,
         };

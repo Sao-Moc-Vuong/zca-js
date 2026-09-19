@@ -17,5 +17,5 @@ export enum AutoReplyScope {
     Everyone = 0,
     Stranger = 1,
     SpecificFriends = 2,
-    FriendsExcept = 3
+    FriendsExcept = 3,
 }

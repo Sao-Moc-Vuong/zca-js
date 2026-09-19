@@ -12,7 +12,7 @@ export const updateActiveStatusFactory = apiFactory<UpdateActiveStatusResponse>(
     /**
      * Update active status?
      *
-     * @param active 
+     * @param active
      *
      * @throws {ZaloApiError}
      */

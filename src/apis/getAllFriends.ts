@@ -17,7 +17,11 @@ export const getAllFriendsFactory = apiFactory<GetAllFriendsResponse>()((api, ct
      *
      * @throws {ZaloApiError}
      */
-    return async function getAllFriends(count: number = 20000, page: number = 1, avatarSize: AvatarSize = AvatarSize.Small) {
+    return async function getAllFriends(
+        count: number = 20000,
+        page: number = 1,
+        avatarSize: AvatarSize = AvatarSize.Small,
+    ) {
         const params = {
             incInvalid: 1,
             page,

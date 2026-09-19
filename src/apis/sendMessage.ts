@@ -65,7 +65,11 @@ function prepareQMSGAttach(quote: SendMessageQuote) {
 
 function prepareQMSG(quote: SendMessageQuote) {
     const quoteData = quote;
-    if (quoteData.msgType == "chat.todo" && typeof quoteData.content == "object" && typeof quoteData.content.params == "string") {
+    if (
+        quoteData.msgType == "chat.todo" &&
+        typeof quoteData.content == "object" &&
+        typeof quoteData.content.params == "string"
+    ) {
         return JSON.parse(quoteData.content.params).item.content;
     }
 
@@ -457,7 +461,9 @@ export const sendMessageFactory = apiFactory()((api, ctx, utils) => {
                             isGroupLayout: isMultiFile ? 1 : undefined,
                             idInGroup: isMultiFile ? indexInGroupLayout++ : undefined,
                             totalItemInGroup: isMultiFile ? uploadAttachment.length : undefined,
-                            extMsgProp: isMultiFile ? `{"groupMediaMsg":{"groupLayoutId":"${groupLayoutId}"}}` : undefined,
+                            extMsgProp: isMultiFile
+                                ? `{"groupMediaMsg":{"groupLayoutId":"${groupLayoutId}"}}`
+                                : undefined,
 
                             mentionInfo:
                                 isMentionsValid && canBeDesc && !quote ? JSON.stringify(mentionsFinal) : undefined,
