@@ -1,5 +1,5 @@
 {
-    "name": "zca-js",
+    "name": "@smvsoftware/zca-js",
     "version": "2.2.0",
     "description": "Unofficial Zalo API for JavaScript",
     "main": "dist/index.js",
